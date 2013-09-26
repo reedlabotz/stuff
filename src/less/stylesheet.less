@@ -1,1 +1,33 @@
 @import "../../vendor/bootstrap/less/bootstrap.less";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.contain {
+  background: url("img/whitey.png");
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar {
+  background: #f5f5f5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  flex: none;
+  width: 200px;
+
+  .nav-header {
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  .nav > li > a {
+    padding: 10px 20px;
+  }
+}
+
+.workspace {
+  flex: 1;
+}

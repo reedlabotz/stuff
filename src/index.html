@@ -4,9 +4,26 @@
   <link rel="stylesheet" type="text/css" href="<%= grunt.config.get('pkg.name') %>.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
   <script type="text/javascript" src="<%= grunt.config.get('pkg.name') %>.js"></script>
-  <title>stuff</title>
+  <title>Stuff</title>
 </head>
 <body ng-controller="AppCtrl">
-  <div class="container" ng-view></div>
+  <div class="contain">
+    <div class="sidebar">    
+      <ul class="nav nav-list">
+        <li class="nav-header">Stuff</li>
+        <li class="active"><a href="#/today">Today</a></li>
+        <li><a href="#/next">Next</a></li>
+        <li><a href="#/scheduled">Scheduled</a></li>
+        <li><a href="#/someday">Someday</a></li>
+        <li class="divider"></li>
+        <li class="nav-header">Projects</li>
+        <li><a href="#">Project 1</a></li>
+        <li><a href="#">Project 2</a></li>
+        <li><a href="#">Project 3</a></li>
+        <li><a href="#">Project 4</a></li>
+      </ul>
+    </div>
+    <div class="workspace" ng-view></div>
+  </div>
 </body>
 </html>
