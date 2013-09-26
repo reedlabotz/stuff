@@ -9,12 +9,20 @@
 <body ng-controller="AppCtrl">
   <div class="contain">
     <div class="sidebar">    
-      <ul class="nav nav-list">
+      <ul class="nav nav-pills nav-stacked" ng-controller="NavCtrl">
         <li class="nav-header">Stuff</li>
-        <li class="active"><a href="#/today">Today</a></li>
-        <li><a href="#/next">Next</a></li>
-        <li><a href="#/scheduled">Scheduled</a></li>
-        <li><a href="#/someday">Someday</a></li>
+        <li ng-class="navClass('stuff/today')">
+          <a href="#/stuff/today">Today</a>
+        </li>
+        <li ng-class="navClass('stuff/next')">
+          <a href="#/stuff/next">Next</a>
+        </li>
+        <li ng-class="navClass('stuff/scheduled')">
+          <a href="#/stuff/scheduled">Scheduled</a>
+        </li>
+        <li ng-class="navClass('stuff/someday')">
+          <a href="#/stuff/someday">Someday</a>
+        </li>
         <li class="divider"></li>
         <li class="nav-header">Projects</li>
         <li><a href="#">Project 1</a></li>
