@@ -8,15 +8,22 @@ stuffModule.config(['$routeProvider', function($routeProvider) {
 stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
     $scope.tasks = [
         {
-            description: 'Task a'
+            description: 'Task a',
+            complete: false,
+            section: 'today'
         },
         {
-            description: 'Task b'
+            description: 'Task b',
+            complete: false,
+            section: 'next'
         },
         {
-            description: 'Task c'
+            description: 'Task c',
+            complete: true,
+            section: 'today'
         }
     ];
+    $scope.section = $routeParams.section;
     $scope.startEditing = function(task){
         task.editing=true;
         $scope.editedTask = task;

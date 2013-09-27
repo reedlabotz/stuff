@@ -16,7 +16,6 @@ navModule.controller('NavCtrl', ['$scope', '$location', function($scope, $locati
     ];
     $scope.navClass = function (page) {
         var currentRoute = $location.path().substring(1) || 'home';
-        console.log(page, currentRoute);
         return page === currentRoute ? 'active' : '';
     }
 }]);
