@@ -1,4 +1,4 @@
-var stuffModule = angular.module('stuff', []);
+var stuffModule = angular.module('stuff', ['edit']);
 stuffModule.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/stuff/:section', {
         templateUrl:'stuff/stuff.tpl.html',
@@ -33,21 +33,3 @@ stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', function($scope, 
         $scope.editedTask = null;
     }
 }]);
-stuffModule.directive('ngBlur', function() {
-    return function( scope, elem, attrs ) {
-        elem.bind('blur', function() {
-            scope.$apply(attrs.ngBlur);
-        });
-    };
-});
-stuffModule.directive('ngFocus', function( $timeout ) {
-    return function( scope, elem, attrs ) {
-        scope.$watch(attrs.ngFocus, function( newval ) {
-            if ( newval ) {
-                $timeout(function() {
-                    elem[0].focus();
-                }, 0, false);
-            }
-        });
-    };
-});
