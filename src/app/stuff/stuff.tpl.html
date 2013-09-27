@@ -1,0 +1,16 @@
+<div ng-repeat="task in tasks"
+     class="task" 
+     draggable="true"
+     ng-dblclick="startEditing(task)">
+  <span ng-hide="task.editing">
+    <input class="checkbox" type="checkbox">{{task.description}}
+  </span>
+  <form ng-submit="doneEditing(task)"
+        ng-show="task.editing">
+    <input class="form-control"
+           placeholder="New task"
+           ng-model="task.description"
+           ng-blur="doneEditing(task)"
+           ng-focus="task == editedTask">
+  </form>
+</div>

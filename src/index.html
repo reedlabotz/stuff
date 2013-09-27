@@ -8,27 +8,35 @@
 </head>
 <body ng-controller="AppCtrl">
   <div class="contain">
-    <div class="sidebar">    
-      <ul class="nav nav-pills nav-stacked" ng-controller="NavCtrl">
+    <div class="sidebar" ng-controller="NavCtrl">
+      <ul class="nav nav-pills nav-stacked">
         <li class="nav-header">Stuff</li>
         <li ng-class="navClass('stuff/today')">
-          <a href="#/stuff/today">Today</a>
+          <a href="#/stuff/today">
+            <span class="glyphicon glyphicon-bookmark"></span>Today
+            <span class="badge pull-right">3</span>
+          </a>
         </li>
         <li ng-class="navClass('stuff/next')">
-          <a href="#/stuff/next">Next</a>
+          <a href="#/stuff/next">
+            <span class="glyphicon glyphicon-tasks"></span>Next
+          </a>
         </li>
         <li ng-class="navClass('stuff/scheduled')">
-          <a href="#/stuff/scheduled">Scheduled</a>
+          <a href="#/stuff/scheduled">
+            <span class="glyphicon glyphicon-calendar"></span>Scheduled
+          </a>
         </li>
         <li ng-class="navClass('stuff/someday')">
-          <a href="#/stuff/someday">Someday</a>
+          <a href="#/stuff/someday">
+            <span class="glyphicon glyphicon-road"></span>Someday
+          </a>
         </li>
-        <li class="divider"></li>
         <li class="nav-header">Projects</li>
-        <li><a href="#">Project 1</a></li>
-        <li><a href="#">Project 2</a></li>
-        <li><a href="#">Project 3</a></li>
-        <li><a href="#">Project 4</a></li>
+        <li ng-repeat="project in projects"
+            ng-class="navClass('project/{{project.id}}')">
+          <a href="#/project/{{project.id}}">{{project.name}}</a>
+        </li>
       </ul>
     </div>
     <div class="workspace" ng-view></div>

@@ -1,8 +1,7 @@
 // Bootstrap
 @import "../../vendor/bootstrap/less/bootstrap.less";
-// Bootswatch
-@import "../../vendor/bootswatch/variables.less";
-@import "../../vendor/bootswatch/bootswatch.less";
+// Override font location
+@icon-font-path:          "fonts/";
 
 // Common styles
 body, html {
@@ -11,17 +10,17 @@ body, html {
 }
 
 .contain {
-  background: url("img/whitey.png");
   display: flex;
   height: 100%;
   width: 100%;
 }
 
 .sidebar {
-  background: #f5f5f5;
+  background: @well-bg;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   flex: none;
   width: 200px;
+  overflow-y: scroll;
 
   .nav-header {
     margin-top: 20px;
@@ -34,8 +33,14 @@ body, html {
   .nav-pills > li > a {
     border-radius: 0;
   }
+  .nav > li > a .glyphicon {
+    margin-right: 10px;
+  }
 }
 
 .workspace {
   flex: 1;
+  padding: 20px 20px;
 }
+
+@import "task.less";
