@@ -1,4 +1,5 @@
 var appModule = angular.module('app', [
+    'common',
     'nav',
     'stuff',
     'project',

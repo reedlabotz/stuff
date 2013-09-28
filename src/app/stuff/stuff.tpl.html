@@ -1,12 +1,16 @@
-<div ng-repeat="task in tasks | filter:{section:section}"
+<div ng-repeat="task in model.tasks | filter:{section:section}"
      class="task" 
-     draggable="true">
+     draggable-task>
   <span ng-hide="task.editing">
     <input class="checkbox"
            type="checkbox"
            ng-model="task.complete">
     <span ng-dblclick="startEditing(task)">
       {{task.description}}
+      <span ng-show="task.project"
+            class="project">
+        {{model.projects[task.project].name}}
+      </span>
     </span>
   </span>
   <form ng-submit="doneEditing(task)"

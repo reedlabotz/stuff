@@ -5,24 +5,8 @@ stuffModule.config(['$routeProvider', function($routeProvider) {
         controller:'StuffCtrl'
     });
 }]);
-stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
-    $scope.tasks = [
-        {
-            description: 'Task a',
-            complete: false,
-            section: 'today'
-        },
-        {
-            description: 'Task b',
-            complete: false,
-            section: 'next'
-        },
-        {
-            description: 'Task c',
-            complete: true,
-            section: 'today'
-        }
-    ];
+stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', 'Model', function($scope, $routeParams, Model) {
+    $scope.model = Model;
     $scope.section = $routeParams.section;
     $scope.startEditing = function(task){
         task.editing=true;
@@ -33,3 +17,17 @@ stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', function($scope, 
         $scope.editedTask = null;
     }
 }]);
+stuffModule.directive('draggableTask', function() {
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attrs) {
+            $element.attr('draggable', 'true');
+            $element.bind('dragstart', function() {
+                $scope.model.draggedTask = $element.scope().task;
+            });
+            $element.bind('dragend', function() {
+                $scope.model.draggedTask = null;
+            });
+        }
+    };
+});

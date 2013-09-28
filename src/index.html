@@ -12,30 +12,31 @@
       <ul class="nav nav-pills nav-stacked">
         <li class="nav-header">Stuff</li>
         <li ng-class="navClass('stuff/today')">
-          <a href="#/stuff/today">
+          <a href="#/stuff/today" drop-target="section:today">
             <span class="glyphicon glyphicon-bookmark"></span>Today
-            <span class="badge pull-right">3</span>
+            <span class="badge pull-right">
+              {{(model.tasks | filter:{section:'today'}).length}}</span>
           </a>
         </li>
         <li ng-class="navClass('stuff/next')">
-          <a href="#/stuff/next">
+          <a href="#/stuff/next" drop-target="section:next">
             <span class="glyphicon glyphicon-tasks"></span>Next
           </a>
         </li>
         <li ng-class="navClass('stuff/scheduled')">
-          <a href="#/stuff/scheduled">
+          <a href="#/stuff/scheduled" drop-target="section:scheduled">
             <span class="glyphicon glyphicon-calendar"></span>Scheduled
           </a>
         </li>
         <li ng-class="navClass('stuff/someday')">
-          <a href="#/stuff/someday">
+          <a href="#/stuff/someday" drop-target="section:someday">
             <span class="glyphicon glyphicon-road"></span>Someday
           </a>
         </li>
         <li class="nav-header">Projects</li>
-        <li ng-repeat="project in projects"
+        <li ng-repeat="project in model.projects"
             ng-class="navClass('project/{{project.id}}')">
-          <a href="#/project/{{project.id}}">{{project.name}}</a>
+          <a href="#/project/{{project.id}}" drop-target="project:{{project.id}}">{{project.name}}</a>
         </li>
       </ul>
     </div>
