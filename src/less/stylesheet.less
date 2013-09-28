@@ -3,17 +3,18 @@
 // Override font location
 @icon-font-path:          "fonts/";
 
-@purple:   "#B700E8";
-@orange:   "#F5AA0B";
-@red:      "#FF330D";
-@blue:     "#0D4BFF";
-@green:    "#0AF5AF";
-@darkGrey: "#393939";
-
+@purple:   #B700E8;
+@orange:   #F5AA0B;
+@red:      #FF330D;
+@blue:     #0D4BFF;
+@green:    #0AF5AF;
+@darkGrey: #393939;
+@lightGrey:#ECECEC;
 // Common styles
 body, html {
   height: 100%;
   width: 100%;
+  background: @darkGrey;
 }
 
 .contain {
@@ -22,8 +23,16 @@ body, html {
   width: 100%;
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background: @purple;
+}
+
+a {
+  color: @blue;
+}
+
 .sidebar {
-  background: @well-bg;
+  background: @lightGrey;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   flex: none;
   width: 200px;

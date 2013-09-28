@@ -1,4 +1,4 @@
-<div ng-repeat="task in model.tasks | filter:{section:section}"
+<div ng-repeat="task in storage.tasks | filter:{section:section}"
      class="task" 
      draggable-task>
   <span ng-hide="task.editing">

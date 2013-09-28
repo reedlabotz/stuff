@@ -3,10 +3,12 @@ var appModule = angular.module('app', [
     'nav',
     'stuff',
     'project',
+    'ngStorage',
     'templates.app']);
 
 appModule.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo:'/stuff/today'});
 }]);
-appModule.controller('AppCtrl', ['$scope', function($scope) {
+appModule.controller('AppCtrl', ['$scope',function($scope) {
+
 }]);

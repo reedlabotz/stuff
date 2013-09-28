@@ -5,8 +5,9 @@ stuffModule.config(['$routeProvider', function($routeProvider) {
         controller:'StuffCtrl'
     });
 }]);
-stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', 'Model', function($scope, $routeParams, Model) {
-    $scope.model = Model;
+stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', '$localStorage', '$model', function($scope, $routeParams, $localStorage, $model) {
+    $scope.storage = $localStorage;
+    $scope.model = $model;
     $scope.section = $routeParams.section;
     $scope.startEditing = function(task){
         task.editing=true;
