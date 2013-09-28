@@ -11,11 +11,11 @@ stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', 'Model', function
     $scope.startEditing = function(task){
         task.editing=true;
         $scope.editedTask = task;
-    }        
+    };      
     $scope.doneEditing = function(task){
         task.editing=false;
         $scope.editedTask = null;
-    }
+    };
 }]);
 stuffModule.directive('draggableTask', function() {
     return {

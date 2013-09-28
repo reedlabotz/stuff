@@ -1,6 +1,8 @@
 {
   "author": "Reed La Botz",
-  "name": "stuff",
+  "name": "Stuff",
+  "version": "0.0.1",
+  "description": "GTD style to do app.",
   "homepage": "https://github.com/reedlabotz/stuff",
   "repository": {
     "type": "git",

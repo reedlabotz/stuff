@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "<%= grunt.config.get('pkg.name') %>",
+  "description": "<%= grunt.config.get('pkg.description') %>",
+  "version":"<%= grunt.config.get('pkg.version') %>",
+  "app": {
+    "launch": {
+      "local_path": "index.html",
+      "container": "panel"
+    }
+  },
+  "icons": {
+    "16": "img/16x16.png",
+    "128": "img/128x128.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
