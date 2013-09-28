@@ -1,3 +1,6 @@
 [submodule "vendor/bootstrap"]
 	path = vendor/bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "vendor/ngstorage"]
+	path = vendor/ngstorage
+	url = https://github.com/gsklee/ngStorage.git
