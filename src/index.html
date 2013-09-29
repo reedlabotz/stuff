@@ -9,8 +9,8 @@
 <body ng-controller="AppCtrl">
   <div class="contain">
     <div class="top"></div>
-    <div class="sidebar" ng-controller="NavCtrl">
-      <ul class="nav nav-pills nav-stacked">
+    <div class="sidebar">
+      <ul class="nav-area nav nav-pills nav-stacked" ng-controller="NavCtrl">
         <li class="nav-header">Stuff</li>
         <li ng-class="navClass('stuff/today')">
           <a href="#/stuff/today" drop-target="section:today">
@@ -42,6 +42,9 @@
           <a href="#/project/{{project.id}}" drop-target="project:{{project.id}}">{{project.name}}</a>
         </li>
       </ul>
+      <div class="action-area" ng-click="addTask()">
+        New task
+      </div>
     </div>
     <div class="workspace" ng-view></div>
   </div>

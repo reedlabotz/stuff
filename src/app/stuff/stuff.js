@@ -9,6 +9,7 @@ stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', '$localStorage', 
     $scope.storage = $localStorage;
     $scope.model = $model;
     $scope.section = $routeParams.section;
+    $scope.model.newTaskAction = ["section", $scope.section];
     $scope.startEditing = function(task){
         task.editing=true;
         $scope.editedTask = task;
@@ -23,10 +24,11 @@ stuffModule.directive('draggableTask', function() {
         restrict: 'A',
         link: function($scope, $element, $attrs) {
             $element.attr('draggable', 'true');
-            $element.bind('dragstart', function() {
+            $element.bind('dragstart', function(e) {
                 $scope.model.draggedTask = $element.scope().task;
+                e.dataTransfer.setDragImage(e.target, 20, 20);
             });
-            $element.bind('dragend', function() {
+            $element.bind('dragend', function(e) {
                 $scope.model.draggedTask = null;
             });
         }

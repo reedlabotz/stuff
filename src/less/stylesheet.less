@@ -36,7 +36,8 @@ a {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   flex: none;
   width: 200px;
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 
   .nav-header {
     margin-top: 20px;
@@ -52,11 +53,21 @@ a {
   .nav > li > a .glyphicon {
     margin-right: 10px;
   }
+
+  .nav-area {
+    flex: 1;
+  }
+
+  .action-area {
+    flex: none;
+    height: 50px;
+  }
 }
 
 .workspace {
   flex: 1;
   padding: 20px 20px;
+  overflow-y: scroll;
 }
 
 @import "task.less";
