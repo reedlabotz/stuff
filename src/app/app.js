@@ -11,6 +11,12 @@ appModule.config(['$routeProvider', function ($routeProvider) {
 }]);
 appModule.controller('AppCtrl', ['$scope', '$localStorage', '$model', function($scope, $localStorage, $model) {
     $scope.storage = $localStorage;
+    if (!$scope.storage.tasks) {
+            $scope.storage.tasks = [];
+    }
+    if (!$scope.storage.project) {
+        $scope.storage.projects = [];
+    }
     $scope.model = $model;
     $scope.addTask = function() {
         var task = {};
