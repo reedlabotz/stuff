@@ -16,7 +16,9 @@ body, html {
   width: 100%;
   background: @darkGrey;
 }
-
+[ng-click] {
+  cursor: pointer;
+}
 .contain {
   display: flex;
   height: 100%;
@@ -60,7 +62,12 @@ a {
 
   .action-area {
     flex: none;
-    height: 50px;
+    padding: 10px;
+  }
+
+  .drop-target {
+    background: @blue;
+    color: #ffffff;
   }
 }
 

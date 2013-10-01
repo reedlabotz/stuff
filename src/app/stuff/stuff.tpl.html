@@ -1,7 +1,7 @@
-<div ng-repeat="task in storage.tasks | filter:{section:section}"
+<div ng-repeat="task in tasks | filter:{section:section}"
      class="task" 
      draggable-task>
-  <span ng-hide="task.editing">
+  <span ng-hide="task == model.editedTask">
     <input class="checkbox"
            type="checkbox"
            ng-model="task.complete">
@@ -9,16 +9,15 @@
       {{task.description}}
       <span ng-show="task.project"
             class="project">
-        {{model.projects[task.project].name}}
+        {{projects[task.project].name}}
       </span>
     </span>
   </span>
   <form ng-submit="doneEditing(task)"
-        ng-show="task.editing">
+        ng-show="task == model.editedTask">
     <input class="form-control"
-           placeholder="New task"
            ng-model="task.description"
            ng-blur="doneEditing(task)"
-           ng-focus="task == editedTask">
+           ng-focus="task == model.editedTask">
   </form>
 </div>

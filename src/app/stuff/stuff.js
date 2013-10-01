@@ -6,17 +6,16 @@ stuffModule.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', '$localStorage', '$model', function($scope, $routeParams, $localStorage, $model) {
-    $scope.storage = $localStorage;
+    $scope.tasks = $localStorage.tasks;
+    $scope.projects = $localStorage.projects;
     $scope.model = $model;
     $scope.section = $routeParams.section;
     $scope.model.newTaskAction = ["section", $scope.section];
     $scope.startEditing = function(task){
-        task.editing=true;
-        $scope.editedTask = task;
+        $scope.model.editedTask = task;
     };      
     $scope.doneEditing = function(task){
-        task.editing=false;
-        $scope.editedTask = null;
+        $scope.model.editedTask = null;
     };
 }]);
 stuffModule.directive('draggableTask', function() {
