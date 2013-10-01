@@ -1,10 +1,11 @@
 <div ng-repeat="task in tasks | filter:{section:section}"
      class="task" 
-     draggable-task>
+     draggable-task
+     ng-class="{done: task.done}">
   <span ng-hide="task == model.editedTask">
     <input class="checkbox"
            type="checkbox"
-           ng-model="task.complete">
+           ng-model="task.done">
     <span ng-dblclick="startEditing(task)">
       {{task.description}}
       <span ng-show="task.project"
