@@ -6,7 +6,7 @@ editModule.directive('ngBlur', function() {
         });
     };
 });
-editModule.directive('ngFocus', function( $timeout ) {
+editModule.directive('ngFocus', ['$timeout', function( $timeout ) {
     return function( scope, elem, attrs ) {
         scope.$watch(attrs.ngFocus, function( newval ) {
             if ( newval ) {
@@ -16,4 +16,4 @@ editModule.directive('ngFocus', function( $timeout ) {
             }
         });
     };
-});
+}]);

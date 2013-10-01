@@ -19,7 +19,7 @@ appModule.controller('AppCtrl', ['$scope', '$localStorage', '$model', function($
     $scope.addTask = function() {
         var task = {};
         task[$scope.model.newTaskAction[0]] = $scope.model.newTaskAction[1];
-        task.description = "New task";
+        task.description = "";
         $model.editedTask = task;
         $scope.tasks.unshift(task);
     };

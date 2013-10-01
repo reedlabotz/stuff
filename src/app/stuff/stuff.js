@@ -15,6 +15,9 @@ stuffModule.controller('StuffCtrl', ['$scope', '$routeParams', '$localStorage', 
         $scope.model.editedTask = task;
     };      
     $scope.doneEditing = function(task){
+        if (task.description === "") {
+            $scope.tasks.splice($scope.tasks.indexOf(task), 1);
+        }
         $scope.model.editedTask = null;
     };
 }]);
